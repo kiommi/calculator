@@ -41,6 +41,41 @@ result_top.place(width=230,
                  anchor=CENTER)
 
 
+class CreateButtons:
+    def __init__(self, text, bg, command, height=2, width=7, font='Montserrat 9',
+                 foreground='white', borderwidth=0):
+        self.text = text
+        self.height = height
+        self.width = width
+        self.font = font
+        self.bg = bg
+        self.foreground = foreground
+        self.borderwidth = borderwidth
+        self.command = command
+
+
+class PlaceButtons(CreateButtons):
+    def __init__(self, text, bg, command, relx, rely, anchor=CENTER):
+        super().__init__(text, bg, command)
+        self.relx = relx
+        self.rely = rely
+        self.anchor = anchor
+
+        button = Button(root,
+                        text=self.text,
+                        height=self.height,
+                        width=self.width,
+                        font=self.font,
+                        bg=self.bg,
+                        foreground=self.foreground,
+                        borderwidth=self.borderwidth,
+                        command=self.command)
+
+        button.place(relx=self.relx,
+                     rely=self.rely,
+                     anchor=self.anchor)
+
+
 class Buttons:
     @staticmethod
     def insert(sign):
@@ -73,18 +108,7 @@ def press_but_0():
     button.insert('0')
 
 
-but_0 = Button(root,
-               text='0',
-               height=2,
-               width=7,
-               font='Montserrat 9',
-               bg='black',
-               foreground='white',
-               borderwidth=0,
-               command=press_but_0)
-but_0.place(relx=0.38,
-            rely=0.92,
-            anchor=CENTER)
+but_0 = PlaceButtons('0', 'black', press_but_0, 0.38, 0.92)
 
 
 def press_but_1():
@@ -92,18 +116,7 @@ def press_but_1():
     button.insert('1')
 
 
-but_1 = Button(root,
-               text='1',
-               height=2,
-               width=7,
-               font='Montserrat 9',
-               bg='black',
-               foreground='white',
-               borderwidth=0,
-               command=press_but_1)
-but_1.place(relx=0.14,
-            rely=0.78,
-            anchor=CENTER)
+but_1 = PlaceButtons('1', 'black', press_but_1, 0.14, 0.78)
 
 
 def press_but_2():
@@ -111,18 +124,7 @@ def press_but_2():
     button.insert('2')
 
 
-but_2 = Button(root,
-               text='2',
-               height=2,
-               width=7,
-               font='Montserrat 9',
-               bg='black',
-               foreground='white',
-               borderwidth=0,
-               command=press_but_2)
-but_2.place(relx=0.38,
-            rely=0.78,
-            anchor=CENTER)
+but_2 = PlaceButtons('2', 'black', press_but_2, 0.38, 0.78)
 
 
 def press_but_3():
@@ -130,18 +132,7 @@ def press_but_3():
     button.insert('3')
 
 
-but_3 = Button(root,
-               text='3',
-               height=2,
-               width=7,
-               font='Montserrat 9',
-               bg='black',
-               foreground='white',
-               borderwidth=0,
-               command=press_but_3)
-but_3.place(relx=0.62,
-            rely=0.78,
-            anchor=CENTER)
+but_3 = PlaceButtons('3', 'black', press_but_3, 0.62, 0.78)
 
 
 def press_but_4():
@@ -149,18 +140,7 @@ def press_but_4():
     button.insert('4')
 
 
-but_4 = Button(root,
-               text='4',
-               height=2,
-               width=7,
-               font='Montserrat 9',
-               bg='black',
-               foreground='white',
-               borderwidth=0,
-               command=press_but_4)
-but_4.place(relx=0.14,
-            rely=0.64,
-            anchor=CENTER)
+but_4 = PlaceButtons('4', 'black', press_but_4, 0.14, 0.64)
 
 
 def press_but_5():
@@ -168,18 +148,7 @@ def press_but_5():
     button.insert('5')
 
 
-but_5 = Button(root,
-               text='5',
-               height=2,
-               width=7,
-               font='Montserrat 9',
-               bg='black',
-               foreground='white',
-               borderwidth=0,
-               command=press_but_5)
-but_5.place(relx=0.38,
-            rely=0.64,
-            anchor=CENTER)
+but_5 = PlaceButtons('5', 'black', press_but_5, 0.38, 0.64)
 
 
 def press_but_6():
@@ -187,18 +156,7 @@ def press_but_6():
     button.insert('6')
 
 
-but_6 = Button(root,
-               text='6',
-               height=2,
-               width=7,
-               font='Montserrat 9',
-               bg='black',
-               foreground='white',
-               borderwidth=0,
-               command=press_but_6)
-but_6.place(relx=0.62,
-            rely=0.64,
-            anchor=CENTER)
+but_6 = PlaceButtons('6', 'black', press_but_6, 0.62, 0.64)
 
 
 def press_but_7():
@@ -206,18 +164,7 @@ def press_but_7():
     button.insert('7')
 
 
-but_7 = Button(root,
-               text='7',
-               height=2,
-               width=7,
-               font='Montserrat 9',
-               bg='black',
-               foreground='white',
-               borderwidth=0,
-               command=press_but_7)
-but_7.place(relx=0.14,
-            rely=0.5,
-            anchor=CENTER)
+but_7 = PlaceButtons('7', 'black', press_but_7, 0.14, 0.5)
 
 
 def press_but_8():
@@ -225,18 +172,7 @@ def press_but_8():
     button.insert('8')
 
 
-but_8 = Button(root,
-               text='8',
-               height=2,
-               width=7,
-               font='Montserrat 9',
-               bg='black',
-               foreground='white',
-               borderwidth=0,
-               command=press_but_8)
-but_8.place(relx=0.38,
-            rely=0.5,
-            anchor=CENTER)
+but_8 = PlaceButtons('8', 'black', press_but_8, 0.38, 0.5)
 
 
 def press_but_9():
@@ -244,18 +180,7 @@ def press_but_9():
     button.insert('9')
 
 
-but_9 = Button(root,
-               text='9',
-               height=2,
-               width=7,
-               font='Montserrat 9',
-               bg='black',
-               foreground='white',
-               borderwidth=0,
-               command=press_but_9)
-but_9.place(relx=0.62,
-            rely=0.5,
-            anchor=CENTER)
+but_9 = PlaceButtons('9', 'black', press_but_9, 0.62, 0.5)
 
 
 def press_but_plus():
@@ -264,18 +189,7 @@ def press_but_plus():
     button.verify()
 
 
-but_plus = Button(root,
-                  text='+',
-                  height=2,
-                  width=7,
-                  font='Montserrat 9',
-                  bg='#131212',
-                  foreground='white',
-                  borderwidth=0,
-                  command=press_but_plus)
-but_plus.place(relx=0.86,
-               rely=0.78,
-               anchor=CENTER)
+but_plus = PlaceButtons('+', '#131212', press_but_plus, 0.86, 0.78)
 
 
 def press_but_minus():
@@ -284,18 +198,7 @@ def press_but_minus():
     button.verify()
 
 
-but_minus = Button(root,
-                   text='-',
-                   height=2,
-                   width=7,
-                   font='Montserrat 9',
-                   bg='#131212',
-                   foreground='white',
-                   borderwidth=0,
-                   command=press_but_minus)
-but_minus.place(relx=0.86,
-                rely=0.64,
-                anchor=CENTER)
+but_minus = PlaceButtons('-', '#131212', press_but_minus, 0.86, 0.64)
 
 
 def press_but_plus_minus():
@@ -310,18 +213,7 @@ def press_but_plus_minus():
     result_top.configure(state='readonly')
 
 
-but_plus_minus = Button(root,
-                        text='±',
-                        height=2,
-                        width=7,
-                        font='Montserrat 9',
-                        bg='#131212',
-                        foreground='white',
-                        borderwidth=0,
-                        command=press_but_plus_minus)
-but_plus_minus.place(relx=0.14,
-                     rely=0.92,
-                     anchor=CENTER)
+but_plus_minus = PlaceButtons('±', '#131212', press_but_plus_minus, 0.14, 0.92)
 
 
 def press_but_multiply():
@@ -330,18 +222,7 @@ def press_but_multiply():
     button.verify()
 
 
-but_multiply = Button(root,
-                      text='×',
-                      height=2,
-                      width=7,
-                      font='Montserrat 9',
-                      bg='#131212',
-                      foreground='white',
-                      borderwidth=0,
-                      command=press_but_multiply)
-but_multiply.place(relx=0.86,
-                   rely=0.5,
-                   anchor=CENTER)
+but_multiply = PlaceButtons('×', '#131212', press_but_multiply, 0.86, 0.5)
 
 
 def press_but_divide():
@@ -350,18 +231,7 @@ def press_but_divide():
     button.verify()
 
 
-but_divide = Button(root,
-                    text='÷',
-                    height=2,
-                    width=7,
-                    font='Montserrat 9',
-                    bg='#131212',
-                    foreground='white',
-                    borderwidth=0,
-                    command=press_but_divide)
-but_divide.place(relx=0.86,
-                 rely=0.36,
-                 anchor=CENTER)
+but_divide = PlaceButtons('÷', '#131212', press_but_divide, 0.86, 0.36)
 
 
 def press_but_point():
@@ -376,18 +246,7 @@ def press_but_point():
     result_bottom.configure(state='readonly')
 
 
-but_point = Button(root,
-                   text='.',
-                   height=2,
-                   width=7,
-                   font='Montserrat 9',
-                   bg='#131212',
-                   foreground='white',
-                   borderwidth=0,
-                   command=press_but_point)
-but_point.place(relx=0.62,
-                rely=0.92,
-                anchor=CENTER)
+but_point = PlaceButtons('.', '#131212', press_but_point, 0.62, 0.92)
 
 
 def press_but_equal():
@@ -412,18 +271,7 @@ def press_but_equal():
     result_top.configure(state='readonly')
 
 
-but_equal = Button(root,
-                   text='=',
-                   height=2,
-                   width=7,
-                   font='Montserrat 9',
-                   bg='#131212',
-                   foreground='white',
-                   borderwidth=0,
-                   command=press_but_equal)
-but_equal.place(relx=0.86,
-                rely=0.92,
-                anchor=CENTER)
+but_equal = PlaceButtons('=', '#131212', press_but_equal, 0.86, 0.92)
 
 
 def press_but_delete_all():
@@ -435,18 +283,7 @@ def press_but_delete_all():
     result_top.config(state='readonly')
 
 
-but_delete_all = Button(root,
-                        text='C',
-                        height=2,
-                        width=7,
-                        font='Montserrat 9',
-                        bg='#131212',
-                        foreground='white',
-                        borderwidth=0,
-                        command=press_but_delete_all)
-but_delete_all.place(relx=0.38,
-                     rely=0.36,
-                     anchor=CENTER)
+but_delete_all = PlaceButtons('C', '#131212', press_but_delete_all, 0.38, 0.36)
 
 
 def press_but_delete_one_symbol():
@@ -455,18 +292,7 @@ def press_but_delete_one_symbol():
     result_bottom.config(state='readonly')
 
 
-but_delete_one_symbol = Button(root,
-                               text='←',
-                               height=2,
-                               width=7,
-                               font='Montserrat 9',
-                               bg='#131212',
-                               foreground='white',
-                               borderwidth=0,
-                               command=press_but_delete_one_symbol)
-but_delete_one_symbol.place(relx=0.62,
-                            rely=0.36,
-                            anchor=CENTER)
+but_delete_one_symbol = PlaceButtons('←', '#131212', press_but_delete_one_symbol, 0.62, 0.36)
 
 
 def press_but_delete_last_entry():
@@ -475,17 +301,6 @@ def press_but_delete_last_entry():
     result_bottom.config(state='readonly')
 
 
-but_delete_last_entry = Button(root,
-                               text='CE',
-                               height=2,
-                               width=7,
-                               font='Montserrat 9',
-                               bg='#131212',
-                               foreground='white',
-                               borderwidth=0,
-                               command=press_but_delete_last_entry)
-but_delete_last_entry.place(relx=0.14,
-                            rely=0.36,
-                            anchor=CENTER)
+but_delete_last_entry = PlaceButtons('CE', '#131212', press_but_delete_last_entry, 0.14, 0.36)
 
 mainloop()
